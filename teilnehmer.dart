@@ -4,10 +4,9 @@ class Teilnehmer1 {
   int? alter;
   int? abschlussnote;
 
-  Teilnehmer1(this.vorName, this.nachName, this.alter, [this.abschlussnote]);
-
+  Teilnehmer1(this.vorName, this.nachName, this.alter, this.abschlussnote);
   @override
   String toString() {
-    return '$vorName $nachName, ist $alter alt und hat folgende Abschlussnote: $abschlussnote.';
+    return '${vorName ?? ""} ${nachName ?? ""}, ist ${alter ?? ""} alt und hat folgende Abschlussnote: ${abschlussnote ?? ""}.';
   }
 }
