@@ -8,6 +8,8 @@ void main() {
   final triangleInch = Triangle.inch(5, 4);
   final triangleFeet = Triangle.feet(8, 3);
 
+  triangleMm.heightInMm = 107;
+
   print(
     '$triangleMm\n $triangleCm\n $triangleDm\n $triangleM\n $triangleInch\n $triangleFeet\n',
   );
