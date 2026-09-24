@@ -9,8 +9,11 @@ void main() {
   final triangleFeet = Triangle.feet(8, 3);
 
   triangleMm.heightInMm = 107;
+  triangleM.heightInM = 1403;
+  triangleDm.heightInMm = 2;
+  triangleMm.widthInCm = 2022;
 
   print(
-    '$triangleMm\n $triangleCm\n $triangleDm\n $triangleM\n $triangleInch\n $triangleFeet\n',
+    ' Milimeter: $triangleMm\n Centimeter: $triangleCm\n Dezimeter: $triangleDm\n Meter: $triangleM\n Inches: $triangleInch\n Feet: $triangleFeet\n',
   );
 }
