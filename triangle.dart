@@ -130,6 +130,7 @@ class Triangle {
         'Triangle(height: ${_heightInMm / MeasurementSystem.feet.factor}feet, width: ${_widthInMm / MeasurementSystem.feet.factor}feet.)',
     };
   }
+  
 
   Triangle.mm(this._heightInMm, this._widthInMm)
     : measurementSystem = MeasurementSystem.mm;
