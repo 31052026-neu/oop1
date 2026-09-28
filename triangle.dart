@@ -17,120 +17,39 @@ class Triangle {
   double _widthInMm;
   MeasurementSystem measurementSystem;
 
-  set heightInMm(double height) {
-    if (height > 0) {
-      _heightInMm = height * MeasurementSystem.mm.factor;
+  double getHeight(MeasurementSystem ms) {
+    return _heightInMm / ms.factor;
+  }
+
+  void setHeight(MeasurementSystem ms, int areaValue) {
+    if (areaValue > 0) {
+      _heightInMm = areaValue * ms.factor;
     }
   }
 
-  double get heightInMm => _heightInMm / MeasurementSystem.mm.factor;
+  double getWidth(MeasurementSystem ms) {
+    return _widthInMm / ms.factor;
+  }
 
-  set widthInMm(double width) {
-    if (width > 0) {
-      _heightInMm = width * MeasurementSystem.mm.factor;
+  void setWidth(MeasurementSystem ms, int areaValue) {
+    if (areaValue > 0) {
+      _widthInMm = areaValue * ms.factor;
     }
   }
 
-  double get widthInMm => _widthInMm / MeasurementSystem.mm.factor;
+  String get area {
+    double height = getHeight(measurementSystem);
+    double width = getWidth(measurementSystem);
+    double areaValue = height * width / 2;
 
-  set heightInCm(double height) {
-    if (height > 0) {
-      _heightInMm = height * MeasurementSystem.cm.factor;
-    }
+    return '$areaValue ${measurementSystem.measurement}²';
   }
-
-  double get heightInCm => _heightInMm / MeasurementSystem.cm.factor;
-
-  set widthInCm(double width) {
-    if (width > 0) {
-      _widthInMm = width * MeasurementSystem.cm.factor;
-    }
-  }
-
-  double get widthInCm => _widthInMm / MeasurementSystem.cm.factor;
-
-  set heightInDm(double height) {
-    if (height > 0) {
-      _heightInMm = height * MeasurementSystem.dm.factor;
-    }
-  }
-
-  double get heightInDm => _heightInMm / MeasurementSystem.dm.factor;
-
-  set widthInDm(double width) {
-    if (width > 0) {
-      _widthInMm = width * MeasurementSystem.dm.factor;
-    }
-  }
-
-  double get widthInDm => _widthInMm / MeasurementSystem.dm.factor;
-
-  set heightInM(double height) {
-    if (height > 0) {
-      _heightInMm = height * MeasurementSystem.dm.factor;
-    }
-  }
-
-  double get heightInM => _heightInMm / MeasurementSystem.m.factor;
-
-  set widthInM(double width) {
-    if (width > 0) {
-      _widthInMm = width * MeasurementSystem.dm.factor;
-    }
-  }
-
-  double get widthInM => _widthInMm / MeasurementSystem.m.factor;
-
-  set heightInInch(double height) {
-    if (height > 0) {
-      _heightInMm = height * MeasurementSystem.inch.factor;
-    }
-  }
-
-  double get heightInInch => _heightInMm / MeasurementSystem.inch.factor;
-
-  set widthInInch(double width) {
-    if (width > 0) {
-      _widthInMm = width * MeasurementSystem.inch.factor;
-    }
-  }
-
-  double get widthInInch => _widthInMm / MeasurementSystem.inch.factor;
-
-  set heightInFeet(double height) {
-    if (height > 0) {
-      _heightInMm = height * MeasurementSystem.feet.factor;
-    }
-  }
-
-  double get heightInFeet => _heightInMm / MeasurementSystem.feet.factor;
-
-  set widthInFeet(double width) {
-    if (width > 0) {
-      _widthInMm = width * MeasurementSystem.feet.factor;
-    }
-  }
-
-  double get widthInFeet => _widthInMm / MeasurementSystem.feet.factor;
 
   @override
   String toString() {
-    return switch (measurementSystem) {
-      MeasurementSystem.mm =>
-        'Triangle(height: ${_heightInMm / MeasurementSystem.mm.factor}mm, width: ${_widthInMm / MeasurementSystem.mm.factor}mm.',
-      MeasurementSystem.cm =>
-        'Triangle(height: ${_heightInMm / MeasurementSystem.cm.factor} cm, width: ${_widthInMm / MeasurementSystem.cm.factor} cm.)',
-      MeasurementSystem.dm =>
-        'Triangle(height: ${_heightInMm / MeasurementSystem.dm.factor} dm, width: ${_widthInMm / MeasurementSystem.dm.factor}dm.)',
-      MeasurementSystem.m =>
-        'Triangle(height: ${_heightInMm / MeasurementSystem.m.factor}m, width: ${_widthInMm / MeasurementSystem.m.factor}m.)',
-      MeasurementSystem.inch =>
-        'Triangle(height: ${_heightInMm / MeasurementSystem.inch.factor}inches, width: ${_widthInMm / MeasurementSystem.inch.factor}inches.)',
-      MeasurementSystem.feet =>
-        'Triangle(height: ${_heightInMm / MeasurementSystem.feet.factor}feet, width: ${_widthInMm / MeasurementSystem.feet.factor}feet.)',
-    };
+    return 'Triangle(height: ${getHeight(measurementSystem)} ${measurementSystem.measurement}, '
+        'width: ${getWidth(measurementSystem)} ${measurementSystem.measurement})';
   }
-  
 
   Triangle.mm(this._heightInMm, this._widthInMm)
     : measurementSystem = MeasurementSystem.mm;
