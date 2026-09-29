@@ -1,5 +1,3 @@
-import 'dart:collection';
-
 class GameObject {
   String? name;
   int? posX;
@@ -32,6 +30,8 @@ abstract class DamageableObject extends GameObject {
   void onKilled() {
     print('You have been killed');
   }
+
+  int get health => _health;
 }
 
 class Player extends DamageableObject {

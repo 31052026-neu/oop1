@@ -5,22 +5,10 @@ import 'teilnehmer.dart';
 void main() {
   final dartKurs = Kurs('Dart');
   final javaScriptKurs = Kurs('Javascript');
-  final pythonKurs = Kurs('Python'); 
+  final pythonKurs = Kurs('Python');
 
-  final teilnehmer1 = Teilnehmer(
-    'Joshua',
-    'Moore',
-    30,
-    Geschlecht.maenlich,
-    1,
-  );
-  final teilnehmer2 = Teilnehmer(
-    'Lukas',
-    'Nies',
-    26,
-    Geschlecht.maenlich,
-    2,
-  );
+  final teilnehmer1 = Teilnehmer('Joshua', 'Moore', 30, Geschlecht.maenlich, 1);
+  final teilnehmer2 = Teilnehmer('Lukas', 'Nies', 26, Geschlecht.maenlich, 2);
   final teilnehmer3 = Teilnehmer(
     'Leonie',
     'Müller',
@@ -35,8 +23,4 @@ void main() {
   print(javaScriptKurs);
   print(pythonKurs);
   print(dartKurs);
-  
 }
-
-
-
