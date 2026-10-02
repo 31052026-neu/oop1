@@ -7,6 +7,14 @@ class Coinstack {
       result += value;
     }
   }
+  bool operator <(Coinstack other) {
+    return result < other.result;
+  }
+
+  bool operator >(Coinstack other) {
+    return result > other.result;
+  }
+
 
   bool operator >=(Coinstack other) {
     return result >= other.result;
@@ -23,7 +31,7 @@ class Coinstack {
     }
     return result == other.result;
   }
-
+  // überschreiben der hashCode-Methode, um sicherzustellen, dass Objekte mit demselben Ergebnis denselben Hashcode haben
   @override
   int get hashCode => result.hashCode;
 
